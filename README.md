@@ -1,4 +1,4 @@
-# A blank project for GraalVM
+# A blank project for Spring MVC + GraalVM
 
 Maven archetype to create a pre-configured maven project for a Spring MVC + GraalVM application.
 
