@@ -90,6 +90,7 @@ jobs:
           params:
             <<: *SLACK_FAILURE
   - name: unit-test-develop-graalvm
+    serial: true
     plan:
       - aggregate:
           - get: repo
@@ -98,7 +99,7 @@ jobs:
       - task: mvn-test
         params:
           <<: *JAVA_OPS
-        config: &MVN_TEST_CONFIG
+        config:
           platform: linux
           image_resource:
             type: docker-image
@@ -119,7 +120,7 @@ jobs:
                 rm -rf ~/.m2
                 ln -fs $(pwd)/m2 ~/.m2
                 ./mvnw clean package -Pgraal -DskipTests
-                ./target/classes/graalvm-springmvc-blank*
+                ./target/classes/graalvm-springmvc-blank* --spring.main.web-application-type=none
         on_failure:
           put: slack-alert
           params:
@@ -131,7 +132,7 @@ jobs:
             resource: repo-develop
             passed:
               - unit-test-develop
-              - unit-test-develop-graalvm
+              #- unit-test-develop-graalvm
             trigger: true
           - get: gpg
       - task: mvn-deploy
