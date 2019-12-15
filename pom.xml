@@ -133,7 +133,7 @@
         <profile>
             <id>graal</id>
             <properties>
-                <graal.version>19.2.0.1</graal.version>
+                <graal.version>19.2.1</graal.version>
             </properties>
             <dependencies>
                 <dependency>
