@@ -5,7 +5,7 @@
 
     <groupId>am.ik.archetype</groupId>
     <artifactId>graalvm-springmvc-blank</artifactId>
-    <version>0.1.2-SNAPSHOT</version>
+    <version>0.1.2</version>
     <packaging>jar</packaging>
 
     <name>graalvm-springmvc-blank</name>
