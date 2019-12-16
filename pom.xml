@@ -137,9 +137,9 @@
             </properties>
             <dependencies>
                 <dependency>
-                    <groupId>com.github.spring-projects-experimental</groupId>
-                    <artifactId>spring-graal-native-image</artifactId>
-                    <version>82abc7c615</version>
+                    <groupId>org.springframework.experimental</groupId>
+                    <artifactId>spring-graal-native-feature</artifactId>
+                    <version>0.6.0.BUILD-SNAPSHOT</version>
                 </dependency>
             </dependencies>
             <build>
@@ -177,8 +177,12 @@
 
     <repositories>
         <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </repositories>
 </project>
